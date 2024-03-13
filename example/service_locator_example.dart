@@ -14,7 +14,14 @@ void main() {
   UserModel pqrUser = UserModel(name: 'Pqr', rollNumber: 2);
 
   ServiceLocator.instance.put(abcUser, key: 'abc');
+
   ServiceLocator.instance.put(pqrUser, key: 'pqr');
+
+  ServiceLocator.instance.put(abcUser, key: 'abc');
+
+  ServiceLocator newServiceLocator = ServiceLocator.getNewServiceLocator;
+
+  print(newServiceLocator);
 
   UserModel abc = ServiceLocator.instance.get('abc');
 
@@ -23,6 +30,4 @@ void main() {
   abc.name = "xyz";
 
   UserModel xyz = ServiceLocator.instance.get('abc');
-
-  print(xyz);
 }

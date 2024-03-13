@@ -1,5 +1,3 @@
-import 'dart:async';
-
 part 'service_locator_impl.dart';
 
 abstract class ServiceLocator {
@@ -8,7 +6,8 @@ abstract class ServiceLocator {
 
   static ServiceLocator get getNewServiceLocator => _ServiceLocator();
 
-  T put<T extends Object>(T instance, {required String key});
+  T put<T extends Object>(T instance,
+      {required String key, bool allowReassign = false});
 
-  T get<T>(String key);
+  T get<T>(String key, {bool deepCloned = false});
 }
