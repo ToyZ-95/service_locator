@@ -9,5 +9,5 @@ abstract class ServiceLocator {
   T put<T extends Object>(T instance,
       {required String key, bool allowReassign = false});
 
-  T get<T>(String key, {bool deepCloned = false});
+  T get<T>(String key);
 }

@@ -15,7 +15,7 @@ class _ServiceLocator implements ServiceLocator {
   }
 
   @override
-  T get<T>(String key, {bool deepCloned = false}) {
+  T get<T>(String key) {
     assert(_store.containsKey(key), "The key:$key does not exist");
     return _store[key] as T;
   }
